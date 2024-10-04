@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stanford CS140e - Operating Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/hugo-bootswatch.css">
+    <link rel="stylesheet" href="css/extra.css">
+  </head>
+  <body>
+
+<nav class="navbar navbar-default">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="index.html" class="navbar-brand">CS140e</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        
+        
+          
+            
+            <li >
+              <a href="index.html">Home</a>
+            </li>
+            
+          
+        
+          
+            <li class="dropdown ">
+              <a href="syllabus.1#" class="dropdown-toggle" data-toggle="dropdown"
+                role="button" aria-expanded="false">
+                Assignments<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                
+                  
+                  <li>
+                    <a href="assignments/info/index.html"> Grading and Policies </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li>
+                    <a href="assignments/0-blinky.1"> Assignment 0: Blinky </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/1-shell.1"> Assignment 1: Shell </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/2-fs.1"> Assignment 2: File System </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/3-spawn.1"> Assignment 3: Spawn </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li>
+                    <a href="assignments/final.1"> Final Exam </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            
+            <li >
+              <a href="about/index.html">General Information</a>
+            </li>
+            
+          
+        
+          
+            
+            <li class="active">
+              <a href="syllabus.1">Syllabus</a>
+            </li>
+            
+          
+        
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+
+<div class="container">
+  <div class="row pad-top">
+    <div class="col-md-12">
+      <h1>
+  Syllabus
+  
+    <small style="font-size: 35%;">
+      <b>Updated</b> January 11, 2018
+    </small>
+  
+</h1>
+
+<hr />
+
+      
+
+<h3 id="topics-covered">Topics Covered</h3>
+
+<p>This course covers the following topics:</p>
+
+<p>Disks, File systems, I/O, Threads &amp; Processes, Scheduling, Virtual Memory,
+Protection &amp; Security, Interrupts, Concurrency &amp; Synchronization.</p>
+
+<h3 id="assignments">Assignments</h3>
+
+<ul>
+<li><strong>Assignment 0:</strong> Raspberry Pi Setup</li>
+<li><strong>Assignment 1:</strong> Shell and Bootloader</li>
+<li><strong>Assignment 2:</strong> SD Driver and FAT File System</li>
+<li><strong>Assignment 3:</strong> Spawn</li>
+<li><strong>Assignment 4:</strong> Multitasking and Multicore</li>
+</ul>
+
+<h3 id="textbook">Textbook</h3>
+
+<p>There is no textbook for this course.</p>
+
+<h3 id="schedule">Schedule</h3>
+
+<!-- schedule is added by themes/cs240-bootswatch/layouts/page/schedule.html -->
+
+<!-- the data for the schedule is in data/schedule.yaml -->
+
+
+      
+
+      
+         <table class="table table-striped table-hover ">
+           <thead>
+             <tr>
+               <th>Week</th>
+                
+                   <th>Monday</th>
+                
+                   <th>Wednesday</th>
+                
+             </tr>
+           </thead>
+           <tbody id="schedule-table" data-start="2018-01-06">
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Jan 8</td>
+
+
+<td>
+   
+      <b>Introduction to CS140e</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec1/slides.pdf">Slides</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Introduction to Rust I</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec2/code.pdf">Code (pdf)</a>
+      
+          | 
+         <a href="notes/lec2/code.rs">Code (rs)</a>
+      
+          | 
+         <a href="notes/lec2/paper.pdf">Rusty Types Reading</a>
+      
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/0-blinky.1">Assignment 0 Released</a>
+      
+   
+      <br />
+      
+         &bull; <a href="https://doc.rust-lang.org/book/second-edition/">Read TRPL v2: Chapters 1 - 11</a>
+      
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Jan 15</td>
+
+
+<td>
+   
+      <b>Martin Luther King Jr. Day (no class/lab!)</b>
+   
+
+   
+
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/submission.1">Assignment 0 Due</a>
+      
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Introduction to Rust II</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec3/cheat-sheet.pdf">Container Cheat Sheet</a>
+      
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/1-shell.1">Assignment 1 Released</a>
+      
+   
+      <br />
+      
+         &bull; <a href="https://doc.rust-lang.org/book/second-edition/ch13-00-functional-features.html">Read TRPL v2: Chapters 13 - 19</a>
+      
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Jan 22</td>
+
+
+<td>
+   
+      <b>What is an OS? The shell, GPIO, UART.</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec4/uart-basics.pdf">UART Communication Basics</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>I/O &amp; Disks</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec5/fs-engler.pdf">CS140 (~15 years ago) Slides</a>
+      
+          | 
+         <a href="notes/lec5/fs-dm.pdf">Recent CS140 Slides</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Jan 29</td>
+
+
+<td>
+   
+      <b>File Systems I</b>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Introduction to Rust III</b>
+   
+
+   
+
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/submission.1">Rust Q&amp;A Submission Due</a>
+      
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Feb 5</td>
+
+
+<td>
+   
+      <b>File Systems II</b>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Memory Allocation, FAT32</b>
+   
+
+   
+
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/submission.1">Assignment 1 Due</a>
+      
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Feb 12</td>
+
+
+<td>
+   
+      <b>Virtual Memory I</b>
+   
+
+   
+
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/2-fs.1">Assignment 2 Released</a>
+      
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Virtual Memory II</b>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Feb 19</td>
+
+
+<td>
+   
+      <b>President&#39;s Day (no class/lab!)</b>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Virtual Memory III</b>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Feb 26</td>
+
+
+<td>
+   
+      <b>Processes &amp; Scheduling</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec13/boards.pdf">Boards</a>
+      
+          | 
+         <a href="notes/lec13/cs140-processes.pdf">CS140 Slides</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Interrupts &amp; Exceptions</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec14/boards.pdf">Boards</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Mar 5</td>
+
+
+<td>
+   
+      <b>IPC &amp; Scheduling</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec15/boards.pdf">Boards</a>
+      
+          | 
+         <a href="notes/lec15/cs140-scheduling.pdf">CS140 Slides</a>
+      
+   
+
+   
+
+   
+      <br />
+      
+         &bull; Assignment 2 Due
+      
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>System Calls &amp; Isolation</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec16/boards.pdf">Boards</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Mar 12</td>
+
+
+<td>
+   
+      <b>Virtual Machines</b>
+   
+
+   
+
+   
+
+   
+
+   
+      <br />
+      
+         &bull; <a href="assignments/3-spawn.1">Assignment 3 Released</a>
+      
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      <b>Synchronization</b>
+   
+
+   
+
+   
+      <br />&bull;
+      
+         
+         <a href="notes/lec18/boards.pdf">Boards</a>
+      
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Mar 19</td>
+
+
+<td>
+   
+      &bull; <a href="assignments/3-spawn.1">Assignment 3 Due</a>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      &bull; <a href="assignments/final.1">Final Exam Due</a>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+
+             
+           </tbody>
+         </table>
+
+         
+            <b><i>Schedule is tentative and subject to change.</i></b>
+            <br /><br />
+         
+      
+    </div>
+  </div>
+ </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootswatch.js"></script>
+    <script src="js/schedule.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stanford CS140e - Operating Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../../css/hugo-bootswatch.css">
+    <link rel="stylesheet" href="../../css/extra.css">
+  </head>
+  <body>
+
+<nav class="navbar navbar-default">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="../../index.html" class="navbar-brand">CS140e</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        
+        
+          
+            
+            <li >
+              <a href="../../index.html">Home</a>
+            </li>
+            
+          
+        
+          
+            <li class="dropdown  active">
+              <a href="../final.1#" class="dropdown-toggle" data-toggle="dropdown"
+                role="button" aria-expanded="false">
+                Assignments<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                
+                  
+                  <li>
+                    <a href="../info/index.html"> Grading and Policies </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li>
+                    <a href="../0-blinky.1"> Assignment 0: Blinky </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="../1-shell.1"> Assignment 1: Shell </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="../2-fs.1"> Assignment 2: File System </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="../3-spawn.1"> Assignment 3: Spawn </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li class="active">
+                    <a href="../final.1"> Final Exam </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            
+            <li >
+              <a href="../../about/index.html">General Information</a>
+            </li>
+            
+          
+        
+          
+            
+            <li >
+              <a href="../../syllabus.1">Syllabus</a>
+            </li>
+            
+          
+        
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+
+<div class="container">
+   <div class="row pad-top">
+      <article class="col-md-9">
+         <h1>Final Exam <small></small></h1>
+         <h4>Due:<b> Wednesday March 21, 2018 11:59PM</b></h4>
+         <hr />
+         
+
+<h3 id="overview">Overview</h3>
+
+<p>Welcome to the last assignment: the final exam! 🎉</p>
+
+<p>In the beginning of the term, we noted that we wanted to do things a bit
+differently in CS140e. The final exam is no exception. Instead of the
+traditional 2 to 3 hour sit-down, on-paper exam, you&rsquo;ll be writing a 5 - 7 page
+<em>course summary</em>. The summary should consolidate all of the material you&rsquo;ve
+learned in CS140e including everything we&rsquo;ve taught in lecture and assignments.</p>
+
+<p>In lecture, we generally discussed fundamental principles of operating systems:
+things like what an operating system is and does and how file systems work. In
+assignments, you implemented a specific instance of many of those principles,
+though not all of them. The primary goal of your summary is to consolidate all
+of these topics into one cohesive, complete, and pithy story about operating
+system design and implementation.</p>
+
+<p>Later on, we provide an outline that your summary should adhere to. The outline
+isn&rsquo;t prescriptive. This is <em>writing</em>, after all, so feel free to be creative as
+long as you touch on most of the points in the outline. We also provide grading
+criteria with writing samples in an effort to illustrate what we expect. Our
+intention is for this to be a fruitful, relaxed exercise that solidifies your
+understanding of the course material. Good luck!</p>
+
+<hr />
+
+<h3 id="the-rules">The Rules</h3>
+
+<p>You are explicitly allowed to:</p>
+
+<ul>
+<li><p><strong>Use your personal notes.</strong></p></li>
+
+<li><p><strong>Use handouts passed out during lecture.</strong></p></li>
+
+<li><p><strong>Use any online material to clarify concepts.</strong></p>
+
+<p>You may use any material you find online as a reference. All writing must be
+your own. Only use external material as a source of truth, never as a source
+of writing.</p></li>
+
+<li><p><strong>Discuss with colleagues at a high level.</strong></p>
+
+<p>You may (and we <em>strongly</em> encourage you to!) converse with fellow
+classmates about any of the course material. All writing must be your own.</p></li>
+
+<li><p><strong>Ask questions to clarify material.</strong></p>
+
+<p>You may continue to ask for clarification about course topics on Piazza, at
+lab, and at office hours. If your question includes extensive details about
+a particular subject, please post the question privately.</p></li>
+</ul>
+
+<p>Your must not:</p>
+
+<ul>
+<li><p><strong>Plagarize.</strong></p>
+
+<p>This is a given; please don&rsquo;t plagirize! Doing so is a serious offense and
+will require us to escalate the matter.</p></li>
+
+<li><p><strong>Share writing with a colleague.</strong></p>
+
+<p>All writing must be your own original work.</p></li>
+</ul>
+
+<p>If you have any questions about what&rsquo;s allowed and what isn&rsquo;t, <strong>please ask</strong>.</p>
+
+<hr />
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>The page layout for your summary must conform to the following specifications:</p>
+
+<ul>
+<li>no more than 7 single-spaced, 8.5&rdquo; x 11&rdquo; pages, including diagrams</li>
+<li>as many additional pages as needed for references and feedback</li>
+<li>10-point type on 12-point (single-spaced) leading</li>
+<li>two columns with 0.85cm of separation</li>
+<li>a top, right, bottom, and left margin of 0.80in</li>
+<li>Times Roman or similar font</li>
+</ul>
+
+<h4 id="latex">LaTeX</h4>
+
+<p>We have provided a LaTeX template that meets these specifications. If you do not
+already have a LaTeX distribution installed and wish to use the template, we
+recommend:</p>
+
+<ul>
+<li>On macOS: <code>brew cask install mactex</code> or <a href="https://tug.org/mactex/">MacTeX</a></li>
+<li>On Ubuntu: <code>apt-get install texlive-full</code></li>
+<li>On Fedora: <code>dnf install texlive-scheme-full</code></li>
+</ul>
+
+<p>You can clone the template repository by running:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://cs140e.sergio.bz/assignments/final/skeleton.git final</code></pre></div>
+<p>You can render the <code>summary.tex</code> file into <code>summary.pdf</code> by calling <code>make</code>. To
+have <code>latexmk</code> continuously render the PDF as you edit, run <code>make watch</code>.</p>
+
+<h4 id="word">Word</h4>
+
+<p>We also provide a Word template, courtesy of Roslyn Cyrus, if you prefer to use
+Word. You can <a href="data/template.docx">download it by clicking here</a>. Due to
+differences between Word versions, you should ensure that the template meets the
+above specifications on your particular setup before using it.</p>
+
+<hr />
+
+<h3 id="outline">Outline</h3>
+
+<p>Your summary should be between 5 and 7 pages when rendered as a PDF. Fewer pages
+are allowed if you feel that you have covered all of the material, but you must
+not exceed 7 pages. Our expectation is that you will spend no more than a day or
+two working on this summary.</p>
+
+<p>The outline below lists specific topics that your summary should include. <strong>You
+shouldn&rsquo;t write towards the outline.</strong> Instead, you should use the outline to
+guide your writing towards a cohesive story about operating systems that
+includes most of these topics. Feel free to write about ideas that aren&rsquo;t
+explicitly mentioned in the outline. Don&rsquo;t feel that you must touch on
+absolutely everything in the outline. It is better to be clear about a few
+important topics than it is to write about every topic in an unclear manner.</p>
+
+<p>We expect your summary to read as a narrative or guide to operating systems, not
+as a series of answers to questions or fragmented ideas. Think about what future
+students in CS140e would benefit from reading and write towards them. Feel free
+to use diagrams, code fragments, illustrations, tables, and figures liberally.</p>
+
+<p>Your summary should cover the majority of the following:</p>
+
+<ul>
+<li><p><strong>Rust</strong> (2 lectures)</p>
+
+<p>Your summary should discuss the Rust programming language and its role in
+operating systems development. You should seek to respond to many, though
+not necessarily all, of the following:</p>
+
+<ol>
+<li><p>What are some unique, key properties of Rust?</p></li>
+
+<li><p>Describe the role of lifetimes and ownership in preventing memory errors.</p></li>
+
+<li><p>What advantages does Rust have when developing operating systems?</p></li>
+
+<li><p>Provide a few examples where something that is relatively easy to do in a
+language like C, such as dereferencing a raw pointer, is more complicated
+or different in Rust. Why?</p></li>
+
+<li><p>Provide a few examples where something that can be done concisely in Rust
+is more verbose in a language like C.</p></li>
+</ol></li>
+
+<li><p><strong>Device Drivers</strong> (1 lecture)</p>
+
+<p>Your summary should describe what a device driver is and how it fits in with
+the bigger picture of operating systems. You should describe the key
+differences between device drivers and other software both in the kernel and
+outside of the kernel.</p></li>
+
+<li><p><strong>File Systems</strong> (3 lectures)</p>
+
+<ol>
+<li><p>Both disk and main memory store values. Discuss the similarities and
+differences between disk and memory.</p></li>
+
+<li><p>Give the shortest, intuitive description of what files and directories
+do, along with the approximate equivalant Rust constructs. (Directories
+ might need two, depending on how you view them.)</p></li>
+
+<li><p>Describe a few common workloads and common FS implementation
+optimizations for them.</p></li>
+
+<li><p>Sketch a couple rules for writing in-memory data and metadata to disk so
+that the file system can be correctly recovered after a crash (as
+discussed these in class). Give one example mistake and its consequences.</p></li>
+
+<li><p>Give the intuition for how a logging (not log structured) file system
+works. What happens on crash? What do you do if you crash while repairing
+a crash?</p></li>
+
+<li><p>Quickly sketch (few sentences at most) how to systematically test a
+storage system using the <code>choose()</code> interface described in class.</p></li>
+</ol></li>
+
+<li><p><strong>Linking</strong> (<sup>1</sup>&frasl;<sub>2</sub> lecture)</p>
+
+<p>Your summary should describe the linker&rsquo;s role in compilation. In
+particular, it should answer the following questions:</p>
+
+<ol>
+<li><p>What is the linkers primary task? How does it work?</p></li>
+
+<li><p>How does the role of a linker change based on the language being
+compiled?</p></li>
+
+<li><p>What and how much control do programmers have of the linker&rsquo;s actions?</p></li>
+</ol></li>
+
+<li><p><strong>Memory Allocation</strong> (<sup>1</sup>&frasl;<sub>2</sub> lecture)</p>
+
+<p>Your summary should describe memory allocation at two levels: first, in the
+kernel, and second, in user space. It should also describe how these two
+levels interact. You should seek to answer the following questions:</p>
+
+<ol>
+<li><p>What is the role of a memory allocator? Why do they exist?</p></li>
+
+<li><p>What are important characteristics of &ldquo;good&rdquo; memory allocators?</p></li>
+
+<li><p>What are characteristics of &ldquo;bad&rdquo; memory allocators?</p></li>
+
+<li><p>How does an allocator&rsquo;s interface affect the implementation of the
+allocator?</p></li>
+
+<li><p>How do different programming language interface with memory
+allocators?</p></li>
+</ol>
+
+<p>You should describe particular kinds of memory allocators and their
+trade-offs and differences. When describing particular implementations of
+memory allocators, illustrations and code examples will be particularly
+useful.</p></li>
+
+<li><p><strong>Virtual Memory</strong> (2 lectures)</p>
+
+<ol>
+<li><p>What problems would show up if we didn&rsquo;t have virtual memory (VM)?</p></li>
+
+<li><p>Compare page-based VM to segmentation-based.  Despite its downsides
+(which are?) page-based has largely won: what&rsquo;s the crucial advantage
+advantage it has?  What&rsquo;s the advantage of segmentation over page-based
+and give a workload where it&rsquo;d work better.</p></li>
+
+<li><p>Describe what happens when a TLB fault occurs for both a
+hardware-controlled and a software-controlled TLB.</p></li>
+
+<li><p>If we do not map page tables using virtual memory (i.e., they are
+referred to with physical addresses), what are advantages/disadvantages
+compared to mapping them virtually? How do we handle translations faults
+during translation faults if they are virtual?</p></li>
+
+<li><p>When are memory allocation and virtual memory used to do approximately
+the same thing? What are some reasons that their approaches are so
+different?</p></li>
+</ol></li>
+
+<li><p><strong>Processes</strong> (4 lectures)</p>
+
+<p>Your summary should describe the design, structure, and implementation of
+processes. It should also describe when processes are allowed to communicate
+with eachother and how they do so. Your discussion about processes should be
+detailed. Your summary should seek to answer the following questions:</p>
+
+<ul>
+<li><p><strong>Processes and IPC</strong></p>
+
+<ol>
+<li><p>Why do processes exist? What problems do they solve?</p></li>
+
+<li><p>What abstractions do processes provide and why?</p></li>
+
+<li><p>How are processes implemented?</p></li>
+
+<li><p>How are processes managed and protected by the operating system?</p></li>
+</ol></li>
+
+<li><p><strong>Scheduling</strong></p>
+
+<p>Your summary should describe how operating systems schedule tasks. It should
+describe the characteristics of good and bad schedulers with details about
+specific scheduling algorithms and the implications of their design.</p></li>
+
+<li><p><strong>Interrupts and Exceptions</strong></p>
+
+<p>Your summary should explain what interrupts and exceptions are as well as
+their role in an operating system. It should seek to answer the following
+questions:</p>
+
+<ol>
+<li><p>What utility do interrupts and exceptions provide?</p></li>
+
+<li><p>What abstractions do operating systems create for interrupts and
+exceptions?</p></li>
+
+<li><p>What mechanisms do CPUs use to deliver interrupts and exceptions?</p></li>
+</ol>
+
+<p>It should describe specific scenarios where interrupts are key to the
+implementation of operating systems.</p></li>
+
+<li><p><strong>Privilege Levels and System Calls</strong></p>
+
+<p>Your summary should explain the role of system calls in operating systems
+and why they are necessary. It should describe system calls in the context
+of privilege levels and privilege separation.</p>
+
+<p>The discussion on system calls should include details on how they are
+implemented and what effect their interface has on the overall interface of
+an operating system. It should also describe how typical users interact with
+system calls.</p></li>
+</ul></li>
+
+<li><p><strong>Synchronization</strong> (1 lecture)</p>
+
+<p>Your summary should discuss synchronization concerns in programs with
+concurrent execution. In particular, it should seek to the answer the
+following questions:</p>
+
+<ol>
+<li><p>What is <em>synchronization</em>? What is <em>cache coherence</em>?</p></li>
+
+<li><p>What mechanisms can be used to synchronize operations?</p></li>
+
+<li><p>What mechanisms and algorithms can be used to provide cache coherence?</p></li>
+
+<li><p>What role does the CPU play in enabling synchronization and coherence?</p></li>
+</ol></li>
+
+<li><p><strong>Virtual Machines</strong> (1 lecture)</p>
+
+<p>Note: the following are more suggestions than requirements, since the
+readings didn&rsquo;t discuss some of these aspects.</p>
+
+<ol>
+<li><p>Why would you use a virtual machine monitor (VMM)? What&rsquo;s the difference
+between virtualization and simulation (hint: in class, we claimed not
+much)?</p></li>
+
+<li><p>If you have a workload where the program counter (pc) is almost always in
+user code, and another where the pc is almost always in systems code, how
+do you expect these to perform on a VMM?</p></li>
+
+<li><p>What&rsquo;s the general methodology for running an OS on top of a VMM as a
+guest OS &ldquo;process&rdquo;?</p></li>
+
+<li><p>Explain &ldquo;trap and emulate&rdquo;.</p></li>
+
+<li><p>Why doesn&rsquo;t VMWare statically translate guest OS code before-hand?</p></li>
+
+<li><p>Generally, people define &ldquo;code&rdquo; as what&rsquo;s in the code (text) segment of
+an executable. How does VMWare&rsquo;s definition of code differ? How does it
+translate code? (Note that binary program checkers such as valgrind and
+pin both define and translate code in much the same way.) Does it have to
+translate user-level application code? Explain.</p></li>
+</ol></li>
+</ul>
+
+<hr />
+
+<h3 id="grading">Grading</h3>
+
+<p>Your summary will be graded on the following criteria:</p>
+
+<ul>
+<li><p><strong>Accuracy</strong></p>
+
+<p>Factual correctness is paramount. Incorrect or inaccurate statements will be
+penalized.</p></li>
+
+<li><p><strong>Completeness</strong></p>
+
+<p>Omission of important topics or connections will be penalized.</p></li>
+
+<li><p><strong>Pithiness</strong></p>
+
+<p>Overly lengthy prose will be penalized. Your writing should be clear,
+concise, and illustrative.</p></li>
+
+<li><p><strong>Creativity</strong></p>
+
+<p>Unique insights or observations, including those not specifically mentioned
+in class, will be rewarded.</p></li>
+</ul>
+
+<hr />
+
+<h3 id="writing-samples">Writing Samples</h3>
+
+<p>To help you guage your writing, we provide three writing samples for a
+particular outline topic. For each writing sample, we list the grade that the
+summary would receive as well why the summary received that grade. Note that in
+your writing, you should seek to explore relationships between topics as much as
+possible.</p>
+
+<h4 id="topic">Topic</h4>
+
+<p>The topic for these writing samples is:</p>
+
+<ul>
+<li><p><strong>Access Control</strong></p>
+
+<p>Your summary should explain the role of access control in operating systems.
+In particular, it should seek to answer the following questions:</p>
+
+<ol>
+<li><p>What are the common forms of access control?</p></li>
+
+<li><p>What are the advantages and disadvantages of different access control
+implmentations?</p></li>
+
+<li><p>How do operating systems enforce access control?</p></li>
+</ol></li>
+</ul>
+
+<h4 id="writing-sample-a">Writing Sample A</h4>
+
+<p>The following summary for the topic would receive an <strong>A</strong>:</p>
+
+<ul>
+<li><h5 id="background">Background</h5>
+
+<p>The introduction of multi-user operating systems begged the question about
+how to share and protect data associated with different users on the same
+physical machine. How could Alice prevent Bob from reading her confidential
+files while allowing Carol to read them? Solutions to this problem, and more
+generally to the problem of enforcing policies on resources owned by
+different users, is known as <em>access control</em>.</p>
+
+<p>There are many forms of access control with complex and entwined
+relationships, but all forms have some shared characteristics. In
+particular, they all ascribe the concept of an identity to users. A user&rsquo;s
+identity is used to specify policies. Identities aren&rsquo;t necessarily unique.
+In Unix based operating systems, for instance, each user is associated with
+a user ID, a unique identity, and a group ID, a non-unique identity. Both
+identities can be used to enforce access control.</p>
+
+<h5 id="mandatory-access-control">Mandatory Access Control</h5>
+
+<p>Two forms of access control see pervasive use today. The first, <em>mandatory
+access control</em> or MAC, allows an administrator to specify policies that the
+system enforces at every access point. The policy is typically specified in
+one place. It is consulted on every access to a resource. The policy can
+never be modified or violated by a non administrative user; it is always
+enforced by the operating system.</p>
+
+<p>An example of a policy might read that only users in a particular group can
+read file &ldquo;foo.txt&rdquo;. When the operating system receives a <code>read()</code> system
+call for a particular file, it checks the user&rsquo;s group against the policy.
+If the policy allows it, the <code>read()</code> is allowed. Otherwise it is denied.</p>
+
+<h5 id="discretionary-access-control">Discretionary Access Control</h5>
+
+<p>The second, <em>discretionary access control</em> or DAC, propagates the idea of
+&ldquo;ownership&rdquo; to resources managed by the operating system. The distinguishing
+feature of a DAC based access control system is that it allows any user with
+a resource to share that resource forward. In other words, if a user has
+access to a resource, then it can do with the resource what it wishes.</p>
+
+<p>As an example, consider that a policy allows user A to open and read a
+particular file but not user B. When user A tries to open the file via the
+<code>open()</code> system call, the operating system will allow it. If user B tries to
+open the same file, the call will be denied. On the other hand, if user A
+opens the file and then passes the file descriptor to B, the operating
+system will subsequently allow B to read from the file. User A has
+effectively shared its permissions to the file at his/her discretion.</p>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>In reality, the complexity of sharing brings about complex access control
+systems that are neither purely discretionary nor mandatory. Mandatory
+access control is typically too course grained to suffice, while
+discretionary access control is typically too flexible. Access control in
+Linux, for instance, is both discretionary and mandatory. Linux makes use of
+the traditional Unix permission bit based DAC for files. With the advent of
+SELinux, however, global policies can be specified that can restrict the
+propagation of permissions.</p></li>
+</ul>
+
+<p>This summary has the following <strong>positive</strong> properties:</p>
+
+<ul>
+<li><p>It answers all of the questions in the outline using narrative.</p></li>
+
+<li><p>It provides a fairly complete and accurate picture of access control.</p></li>
+
+<li><p>It provides and justifies a singular definition for access control.</p></li>
+
+<li><p>It provides context for why access control exists, illustrating real
+problems that it solves.</p></li>
+
+<li><p>It provides examples to help the reader understand the concepts better.</p></li>
+
+<li><p>It explains, in short, how access control applies to modern systems.</p></li>
+
+<li><p>It does not short-change the complexity of the subject.</p></li>
+
+<li><p>While not exceedingly short, it is also not exceedingly long, vying on the
+reader&rsquo;s background to shorten the discussion.</p></li>
+</ul>
+
+<p>This summary has the following <strong>negative</strong> properties:</p>
+
+<ul>
+<li>No specific example of an implementation for DAC is mentioned.</li>
+</ul>
+
+<h4 id="writing-sample-b">Writing Sample B</h4>
+
+<p>The following summary for the topic would receive a <strong>B</strong>:</p>
+
+<ul>
+<li><h5 id="background-1">Background</h5>
+
+<p>Operating systems manage resources for users. Users expect the operating
+system to protect their resources from other users. The mechanisms by which
+an operating system accomplishes this is known as access control.</p>
+
+<p>There are many forms of access control. In many of them, users are given an
+identity, such as user IDs in Unix based operating systems. When a resource
+is accessed by a user, the operating system checks the user&rsquo;s ID against a
+policy. The access is only allowed if the policy allows it.</p>
+
+<p>There are two primary kinds of policies in use today.</p>
+
+<h5 id="mandatory-access-control-1">Mandatory Access Control</h5>
+
+<p>The first, <em>mandatory access control</em> or MAC, allows an administrator to
+specify policies that are enforced by the system every time an access
+occurs. There is typically one policy. The policy can only be modified by an
+administrator, and the operating system makes sure to check the policy for
+every access.</p>
+
+<p>As an example, consider the following policy:</p>
+
+<pre><code>user A can read foo
+user B cannot read foo
+</code></pre>
+
+<p>If a user A tries to read foo, then the operating system will allow the
+read. On the other hand, if a user B tries to read the same file, it won&rsquo;t
+be allowed. Neither A nor B can modify this policy.</p>
+
+<h5 id="discretionary-access-control-1">Discretionary Access Control</h5>
+
+<p>The second, <em>discretionary access control</em> or DAC, allows users to share
+permissions for a particular resource. Using the same policy from the
+previous example in a DAC context, a DAC based access control system would
+allow user A to pass a handle to foo to user B. User B would then be able to
+read the file because A used discretion to pass the permissions to user B.</p>
+
+<h5 id="comparison">Comparison</h5>
+
+<p>Whether you use DAC or MAC depends on which properties the system desires.
+In particular, if resources are viewed as being &ldquo;owned&rdquo;, then DAC&rsquo;s
+abilities to share resource is more appropriate. DACs can prove to be too
+lenient, however; it is not always the case that a user&rsquo;s access to some
+resources implies that it can share that access.</p>
+
+<p>If, on the other hand, there is a central policy authority, then MAC is the
+better option. The downside is, of course, is that MAC can be too
+restrictive and static. Once the decision is made, it is difficult to
+change.</p>
+
+<h5 id="conclusion-1">Conclusion</h5>
+
+<p>It is also possible for an operating system to use both MAC and DAC.
+Continuing with the example above, a MAC/DAC hybrid might allow A to share
+foo with B but still deny B from reading the file. Linux, for example, uses
+a model that is closer to this.</p></li>
+</ul>
+
+<p>This summary has the following <strong>positive</strong> properties:</p>
+
+<ul>
+<li><p>It answers all of the questions in the outline using narrative.</p></li>
+
+<li><p>It provides examples to help the reader understand the concepts better.</p></li>
+
+<li><p>It somewhat explains how access control applies to modern systems.</p></li>
+
+<li><p>It does not short-change the complexity of the subject.</p></li>
+
+<li><p>While not exceedingly short, it is also not exceedingly long, vying on the
+reader&rsquo;s background to shorten the discussion.</p></li>
+</ul>
+
+<p>This summary has the followentwineding <strong>negative</strong> properties:</p>
+
+<ul>
+<li><p>The writing has no cohesive narrative.</p></li>
+
+<li><p>No background, or &ldquo;why?&rdquo; for access control is provided.</p></li>
+
+<li><p>Many details are introduced and left undiscussed.</p></li>
+
+<li><p>The described implementation of access control is vague.</p></li>
+
+<li><p>Specifics about particular implementations, such as Unix&rsquo;s, are generalized
+incorrectly.</p></li>
+</ul>
+
+<h4 id="writing-sample-c">Writing Sample C</h4>
+
+<p>The following summary for the topic would receive a <strong>C</strong>:</p>
+
+<ul>
+<li><h5 id="background-2">Background</h5>
+
+<p>Operating systems manage resources for users. Users expect the operating
+system to protect their resources from other users. The mechanisms by which
+an operating system accomplishes this is known as access control.</p>
+
+<p>There are two forms of access control, both of which give users a unique
+identity. When a resource is accessed by a user, the operating system checks
+the user&rsquo;s ID against some kind of policy, which depends on the kind of
+access control. The access is only allowed if the policy allows it.</p>
+
+<p>The first kind of access control, <em>mandatory access control</em> or MAC, allows
+an administrator to globally enforce a policy. This usually done by allowing
+the administrator to set permissions bits on resources. In Linux, for
+example, only the administrator can change the permissions of files. Once
+the change is made, access to that resources are enforced by the operating
+system. It is also possible to specify policies in a single file.</p>
+
+<p>The second, <em>discretionary access control</em> or DAC, allows users to share
+permissions for a particular resource. For example, a user can pass a file
+that is owned by them to a different user. This way, the user can read the
+file where previously they could not. It is up to the user (their
+discretion) on whether they want to share the resource or not.</p>
+
+<h5 id="comparison-1">Comparison</h5>
+
+<p>DAC is usually faster since the permissions are checked on the resource
+itself. There is no global policy, so checks can be made locally.
+Furthermore, DAC allows you share permissions. It is more flexible that MAC.</p>
+
+<p>MAC is typically stricer since the same policy is enforced on all files
+instead of on a per-file basis. It can also be less performant.</p>
+
+<h5 id="enforcement-implementation">Enforcement Implementation</h5>
+
+<p>Operating systems enforce access control at the system call layer. For every
+system call that&rsquo;s made, the operating system will check that the user ID
+is identified as having the permissions needed in the policy. For DAC, this
+means checking the bits in the file. For MAC, this means checking the policy
+file.</p>
+
+<h5 id="conclusion-2">Conclusion</h5>
+
+<p>It is also possible for an operating system to use both MAC and DAC. In
+fact, Linux uses both at the same time.</p></li>
+</ul>
+
+<p>This summary has the following <strong>positive</strong> properties:</p>
+
+<ul>
+<li><p>It provides a singular definition for access control.</p></li>
+
+<li><p>It answers all of the questions in the outline using narrative.</p></li>
+
+<li><p>The described implementation of access control is fairly clear.</p></li>
+</ul>
+
+<p>This summary has the following <strong>negative</strong> properties:</p>
+
+<ul>
+<li><p>The writing feels very unpolished.</p></li>
+
+<li><p>The writing has no cohesive narrative.</p></li>
+
+<li><p>It overgeneralizes details about specific access control implementations.</p></li>
+
+<li><p>It provides incorrect examples related to MAC and DAC.</p></li>
+
+<li><p>It makes inaccurate statements about DAC and MAC.</p></li>
+
+<li><p>It compares the access control methods on performance, an unrelated factor.</p></li>
+
+<li><p>Many details are introduced and left undiscussed.</p></li>
+
+<li><p>Specifics about particular implementations, such as Unix&rsquo;s, are generalized
+incorrectly.</p></li>
+</ul>
+
+<hr />
+
+<h3 id="span-class-glyphicon-glyphicon-flag-aria-hidden-true-span-submission"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Submission</h3>
+
+<p>When you are ready, submit the generated <code>summary.pdf</code> file at the <a href="../submission.1">submission
+page</a>. Your summary should not exceed 7 pages. If you have any feedback on
+anything related to the course, you may append any number of feedback pages to
+your summary.</p>
+
+<hr />
+
+<h3 id="prologue">Prologue</h3>
+
+<p>A sincere <strong>thank you</strong> for taking part in this inaugural incarnation of CS140e.
+It has been an absolute pleasure interacting with each and every one of you. I
+could not have asked for a better group of students.</p>
+
+<p>I genuinely hope that you have learned a great deal throughout the course and
+that you are able to apply what you have learned in your future endeavors.
+Operating systems are complex, but they are not complicated. I trust that you
+have seen this first-hand through the course assignments. Of course, there is an
+incredible wealth of information about operating systems that we did not cover,
+but you should now be in a position to discover and acquire that material on
+your own. If you have any questions, I am always up for a chat about operating
+systems.</p>
+
+<p>A warm thank you to the course staff for their time and efforts: <strong>Dawson
+Engler</strong>, for allowing me to shoehorn Rust and 64-bit ARM into a brand new
+operating systems course, for having invaluable insights about what works and
+doesn&rsquo;t, and for confiding in me to deliver on the course. And <strong>Jennifer Lin</strong>,
+for exceeding all expectations about what it means to be a wonderful TA.</p>
+
+<p>Until next time!<br />
+Sergio</p>
+
+      </article>
+
+      <div class="col-md-3 sidebar">
+         
+            <h3>Table of Contents</h3>
+            
+
+
+ 
+
+
+
+
+
+
+<div class="table-of-contents toc bd-callout">
+    
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#overview">
+                    <li>Overview</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#the-rules">
+                    <li>The Rules</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#getting-started">
+                    <li>Getting Started</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#latex">
+                    <li>LaTeX</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#word">
+                    <li>Word</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#outline">
+                    <li>Outline</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#grading">
+                    <li>Grading</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#writing-samples">
+                    <li>Writing Samples</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#topic">
+                    <li>Topic</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#writing-sample-a">
+                    <li>Writing Sample A</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#writing-sample-b">
+                    <li>Writing Sample B</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                    <ul class="toc-h4">
+                
+                <a href="../final.1#writing-sample-c">
+                    <li>Writing Sample C</li>
+                </a>
+                
+                
+                    </ul>
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#span-class-glyphicon-glyphicon-flag-aria-hidden-true-span-submission">
+                    <li>Submission</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+        
+        
+            
+            
+               
+               
+                
+                
+                    <ul class="toc-h3">
+                
+                <a href="../final.1#prologue">
+                    <li>Prologue</li>
+                </a>
+                
+                
+                    </ul>
+                
+             
+        
+    
+</div>
+
+
+         
+
+         
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootswatch.js"></script>
+    <script src="../../js/schedule.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
+
+

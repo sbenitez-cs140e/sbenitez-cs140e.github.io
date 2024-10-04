@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <title>Stanford CS140e - Operating Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/hugo-bootswatch.css">
+    <link rel="stylesheet" href="css/extra.css">
+  </head>
+  <body>
+
+<nav class="navbar navbar-default">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="index.html" class="navbar-brand">CS140e</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        
+        
+          
+            
+            <li class="active">
+              <a href="index.html">Home</a>
+            </li>
+            
+          
+        
+          
+            <li class="dropdown ">
+              <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"
+                role="button" aria-expanded="false">
+                Assignments<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                
+                  
+                  <li>
+                    <a href="assignments/info/index.html"> Grading and Policies </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li>
+                    <a href="assignments/0-blinky.1"> Assignment 0: Blinky </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/1-shell.1"> Assignment 1: Shell </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/2-fs.1"> Assignment 2: File System </a>
+                  </li>
+                  
+                
+                  
+                  <li>
+                    <a href="assignments/3-spawn.1"> Assignment 3: Spawn </a>
+                  </li>
+                  
+                
+                  <li class="divider"></li>
+                  <li>
+                    <a href="assignments/final.1"> Final Exam </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            
+            <li >
+              <a href="about/index.html">General Information</a>
+            </li>
+            
+          
+        
+          
+            
+            <li >
+              <a href="syllabus.1">Syllabus</a>
+            </li>
+            
+          
+        
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>CS140e <small>(Winter 2018)</small></h1>
+      <h4>An Experimental Course on Operating Systems</h4>
+
+      
+         
+            <hr /><p>
+<div class="alert alert-dismissible alert-warning">
+   <p style="font-size: 16px; font-weight: bold;">
+      
+         <span class="glyphicon glyphicon-warning-sign" aria-hidden="true" style="margin-right: 3px"></span>
+      
+      This is an archived copy of CS140e.
+   </p>
+   <p><p>You are viewing an archived version of Stanford&rsquo;s CS140e Winter 2018 course.</p>
+
+<p>Questions? Comments? <a href="https://sergio.bz">Shoot me an email!</a></p>
+</p>
+</div>
+
+
+</p>
+         
+      
+
+      
+
+         <hr />
+         <h4>
+            <b>Upcoming Schedule</b>
+            <small>(<a href="syllabus.1#schedule">See Full Schedule</a>)</small>
+         </h4>
+         <hr />
+
+         
+         <table class="table table-striped table-hover ">
+           <thead>
+             <tr>
+               <th>Week</th>
+                
+                   <th>Monday</th>
+                
+                   <th>Wednesday</th>
+                
+             </tr>
+           </thead>
+           <tbody>
+             
+
+             
+             
+
+             
+               
+               
+
+
+
+
+
+
+
+   <tr>
+      <td>Mar 19</td>
+
+
+<td>
+   
+      &bull; <a href="assignments/3-spawn.1">Assignment 3 Due</a>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+
+             
+               
+               
+
+
+
+
+
+
+
+
+<td>
+   
+      &bull; <a href="assignments/final.1">Final Exam Due</a>
+   
+
+   
+
+   
+
+   
+
+   
+</td>
+
+
+   </tr>
+
+
+             
+           </tbody>
+         </table>
+      
+
+      <hr />
+
+      <h4><b>News</b></h4>
+      
+        <hr />
+        <p>
+           <p><small>Monday, March 26, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Assignment 3 Grades Posted</strong></h4>
+           <p>Grades for assignment 3 are now available. You can view your grade in the
+<a href="assignments/submission.1">submission and grades</a> page. You must be signed in with your SUNet ID to access
+the page. You may need to clear your browser&rsquo;s cache for the page to
+successfully update.</p>
+
+<p>The graph below shows aggregate statistics for assignment 3 grades.</p>
+
+<figure style="
+   
+    padding: 10px; 
+">
+   <img src="images/assignment3-graph.png"
+       alt="Assignment 3 Grade Aggregates"
+      
+
+      
+       width="600px" 
+      style="
+          display: block; margin: 0 auto; 
+      "/>
+   
+</figure>
+
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Saturday, March 24, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Assignment 2 Grades Posted</strong></h4>
+           <p>Grades for assignment 2 are now available. You can view your grade in the
+<a href="assignments/submission.1">submission and grades</a> page. You must be signed in with your SUNet ID to access
+the page. You may need to clear your browser&rsquo;s cache for the page to
+successfully update.</p>
+
+<p>The graph below shows aggregate statistics for assignment 2 grades.</p>
+
+<figure style="
+   
+    padding: 10px; 
+">
+   <img src="images/assignment2-graph.png"
+       alt="Assignment 2 Grade Aggregates"
+      
+
+      
+       width="600px" 
+      style="
+          display: block; margin: 0 auto; 
+      "/>
+   
+</figure>
+
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Friday, March 2, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Assignment 1 Grades Posted</strong></h4>
+           <p>Grades for assignment 1 are now available. You can view your grade in the
+<a href="assignments/submission.1">submission and grades</a> page. You must be signed in with your SUNet ID to access
+the page. You may need to clear your browser&rsquo;s cache for the page to
+successfully update.</p>
+
+<p>The graph below shows aggregate statistics for assignment 1 grades.</p>
+
+<figure style="
+   
+    padding: 10px; 
+">
+   <img src="images/assignment1-graph.png"
+       alt="Assignment 1 Grade Aggregates"
+      
+
+      
+       width="600px" 
+      style="
+          display: block; margin: 0 auto; 
+      "/>
+   
+</figure>
+
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Tuesday, February 20, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Sergio&#39;s Office Hours Moved to Friday</strong></h4>
+           <p>Effective today and for the remainder of the term, Sergio&rsquo;s office hours will be
+held on Fridays from 5:30pm to 7:00pm.</p>
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Tuesday, February 6, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Tomorrow&#39;s Lecture in Gates 104</strong></h4>
+           <p>Tomorrow&rsquo;s lecture will be held in Gates 104 instead of the usual 160-124. We
+will be discussing memory allocators, FAT32, and the compilation and linking of
+binaries.</p>
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Wednesday, January 31, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Updates to Assignment 1 Skeleton</strong></h4>
+           <p>The assignment 1 skeleton recently incurred breaking changes that likely impact
+your code. The following is a list of changes with explanations on how to handle
+them properly:</p>
+
+<ul>
+<li><p>The <code>Xmodem::read_byte()</code> method signature in <code>xmodem</code> changed.</p>
+
+<p>The method now takes an <code>abort_on_can</code> parameter:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#c41a16">/// Reads a single byte from the inner I/O stream. If `abort_on_can` is `true`,
+</span><span style="color:#c41a16">/// an error of `ConnectionAborted` is returned if the read byte is `CAN`.
+</span><span style="color:#c41a16"></span><span style="color:#a90d91">fn</span> <span style="color:#000">read_byte</span>(<span style="color:#000">&amp;</span><span style="color:#a90d91">mut</span> <span style="color:#5b269a">self</span>, <span style="color:#000">abort_on_can</span>: <span style="color:#a90d91">bool</span>) -&gt; <span style="color:#3f6e75">io</span>::<span style="color:#a90d91">Result</span><span style="color:#000">&lt;</span><span style="color:#a90d91">u8</span><span style="color:#000">&gt;</span>
+</code></pre></div>
+<p>To handle this change, you will need to modify any calls to <code>read_byte</code> in
+your code. You should also read the updated docstrings for <code>expect_byte</code> and
+<code>expect_byte_or_cancel</code> and ensure that your code properly fulfills them.</p></li>
+
+<li><p>A progress indication callback can be passed in to <code>xmodem</code>.</p>
+
+<p>The <code>Xmodem</code> structure has a new field, <code>progress</code>, that refers to a
+function that should be called by your <code>read_packet</code> and <code>write_packet</code>
+methods. The purpose of the new field is to allow clients of the <code>xmodem</code>
+library to be notified about the progress of a file transfer. The
+docstrings for these methods have been updated to reflect usage of the
+<code>progress</code> field.</p>
+
+<p>We&rsquo;ve also amended the assignment text related to the <code>ttywrite</code> utility to
+suggest using the new progress functionality in your <code>ttywrite</code>
+implementation. The text includes an example of how to do so.</p></li>
+
+<li><p>Added tests for <code>xmodem</code> corner-cases.</p>
+
+<p>New tests were added to the <code>xmodem</code> library that should help catch
+corner-cases and more errors. The aim is to make it more likely that your
+library is correct if it passes the tests.</p></li>
+
+<li><p>Fixed parsing of <code>-t</code>, <code>--timeout</code> parameter in <code>ttywrite</code>.</p>
+
+<p>Due to <a href="https://github.com/TeXitoi/structopt/issues/30">structopt#30</a>, the <code>timeout</code> command-line argument was being parsed
+incorrectly. This has been fixed in the latest updates as well as upstream
+in <a href="https://github.com/TeXitoi/structopt/pull/48">structopt#48</a>. There is nothing you have to do as a result of this
+change.</p></li>
+</ul>
+
+<p>After commiting your changes, run <code>git pull</code> in your assignment 1 skeleton
+repository to pull in these changes.</p>
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Tuesday, January 30, 2018</small></p>
+           <h4 style="margin-top: 7px;"><strong>Tomorrow&#39;s Lecture: Rust Q&amp;A Session</strong></h4>
+           <p>We&rsquo;d like to revisit advanced or confusing Rust topics in tomorrow&rsquo;s lecture.</p>
+
+<p>A portion of tomorrow&rsquo;s lecture will be dedicated to answering questions about
+Rust that <strong><em>you</em></strong> have. To this end, we&rsquo;d like you to submit a text file
+containing questions that have popped up while you&rsquo;ve been writing Rust. If
+you&rsquo;re unsure about how something works, don&rsquo;t know <em>why</em> something works, are
+confused about how to do something in Rust, or simply want to know more about a
+particular topic, <em>please</em> submit your questions!</p>
+
+<p>To submit your questions, write them in a text file named <code>rust-qa.txt</code> and then
+upload the file on the <a href="assignments/submission.1">submissions page</a>. We&rsquo;ll take the most popular or
+insightful questions and answer them in lecture tomorrow.</p>
+
+<p><strong>Please submit your questions file <em>before noon</em> on Wednesday, January 31.</strong></p>
+
+        </p>
+      
+        <hr />
+        <p>
+           <p><small>Friday, December 15, 2017</small></p>
+           <h4 style="margin-top: 7px;"><strong>Getting Ready for CS140e</strong></h4>
+           <p>We&rsquo;re hard at work preparing for the first offering of CS140e! In the coming
+weeks, this site will be fleshed out to contain everything there is to know
+about CS140e. In the mean time, make sure you:</p>
+
+<ol>
+<li><p>Fill out the <a href="https://goo.gl/forms/aOsffynCUcUWBy6N2"><strong>pre-registration survey</strong></a> to register.</p>
+
+<p>If you have already filled out the survey but haven&rsquo;t received a response
+  within a week, please email us!</p></li>
+
+<li><p><a href="https://piazza.com/stanford/winter2018/cs140e">Sign up for CS140e on Piazza.</a></p>
+
+<p>We&rsquo;ll be using Piazza for Q/A. Sign up before the class starts.</p></li>
+
+<li><p>Ensure your laptop is natively running Linux, BSD, or OS X.</p>
+
+<p>These are the only platforms we&rsquo;ll support. If you don&rsquo;t have a machine
+  that runs Linux, we recommend installing <a href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a> or <a href="https://getfedora.org/en/workstation/download/">Fedora</a> on a
+  secondary partition. Sorry, but we cannot make any exceptions for
+  Windows-based machines.</p></li>
+
+<li><p><a href="https://www.raspberrypi.org/documentation/hardware/">Learn about the Raspberry Pi Hardware.</a></p>
+
+<p>This one&rsquo;s an extra! Get a head-start on learning about the platform
+  you&rsquo;ll be building on: the Raspberry Pi 3.</p></li>
+</ol>
+
+        </p>
+      
+    </div>
+    
+    
+    
+    
+    
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootswatch.js"></script>
+    <script src="js/schedule.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
+
+
